@@ -51,8 +51,8 @@ export function verifySessionToken(token?: string): AuthUser | null {
   }
 }
 
-export function getDemoAdminPassword() {
-  return process.env.ADMIN_PASSWORD ?? 'DungaaAdmin2026!';
+export function getAdminPassword() {
+  return process.env.ADMIN_PASSWORD;
 }
 
 export function buildUser(name: string, email: string, role: UserRole): AuthUser {

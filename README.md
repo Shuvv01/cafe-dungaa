@@ -44,7 +44,7 @@ Admin login:
 - Email: `admin@cafedungaa.com`
 - Password: set `ADMIN_PASSWORD` in `.env.local`
 
-For local development only, the fallback admin password is defined in `lib/auth.ts`. Replace `AUTH_SECRET` and `ADMIN_PASSWORD` before deployment.
+Create `.env.local` from `.env.example` and set `AUTH_SECRET` plus `ADMIN_PASSWORD` before using the admin login.
 
 ## Important edits before showing to a real client
 

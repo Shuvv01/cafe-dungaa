@@ -82,8 +82,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
           <ShieldCheck size={17} className="text-leaf" /> Demo credentials
         </p>
         <p className="mt-2">
-          Member: use any email with a 6+ character password. Admin: {siteConfig.adminEmail} with password from ADMIN_PASSWORD
-          env, or the local demo fallback.
+          Member: use any email with a 6+ character password. Admin: {siteConfig.adminEmail} with the ADMIN_PASSWORD
+          value from your local environment.
         </p>
       </div>
 

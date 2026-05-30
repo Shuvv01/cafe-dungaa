@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { authCookieName, buildUser, createSessionToken, getDemoAdminPassword } from '@/lib/auth';
+import { authCookieName, buildUser, createSessionToken, getAdminPassword } from '@/lib/auth';
 import { siteConfig } from '@/data/site';
 
 type LoginBody = {
@@ -17,8 +17,9 @@ export async function POST(request: Request) {
   }
 
   const isAdmin = email === siteConfig.adminEmail;
+  const adminPassword = getAdminPassword();
   const validMember = password.length >= 6;
-  const validAdmin = isAdmin && password === getDemoAdminPassword();
+  const validAdmin = isAdmin && Boolean(adminPassword) && password === adminPassword;
 
   if ((isAdmin && !validAdmin) || (!isAdmin && !validMember)) {
     return NextResponse.json({ ok: false, message: 'Invalid email or password.' }, { status: 401 });
